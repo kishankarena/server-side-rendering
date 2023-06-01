@@ -15,7 +15,7 @@ app.use("^/$", (req, res) => {
       console.err(err);
       return res.status(500).send("Some error happened");
     }
-    const html = ReactDOMServer.renderToString(
+    const html = ReactDOMServer.renderToPipeableStream(
       <StaticRouter location={req.url}>
         <App />
       </StaticRouter>
